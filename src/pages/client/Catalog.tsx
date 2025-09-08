@@ -291,7 +291,7 @@ const Catalog = () => {
       
       <CardHeader className="p-3 pb-0">
         <div className="relative">
-          <AspectRatio ratio={4/3} className="bg-muted overflow-hidden rounded-md h-20">
+          <AspectRatio ratio={1} className="bg-muted overflow-hidden rounded-md h-28">
             {product.imageUrl ? (
               <img
                 src={product.imageUrl}
@@ -458,7 +458,7 @@ const Catalog = () => {
       />
       
       <div className="sm:w-1/4 mb-4 sm:mb-0 sm:mr-4 relative">
-        <AspectRatio ratio={4/3} className="bg-muted overflow-hidden rounded-md h-full">
+        <AspectRatio ratio={1} className="bg-muted overflow-hidden rounded-md h-full">
           {product.imageUrl ? (
             <img
               src={product.imageUrl}
