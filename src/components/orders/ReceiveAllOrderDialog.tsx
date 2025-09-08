@@ -15,6 +15,7 @@ import { useInventory } from '@/context/InventoryContext';
 import { useToast } from '@/hooks/use-toast';
 import { Order } from '@/types';
 import { Truck, Package } from 'lucide-react';
+import { useProducts } from '@/context/ProductContext';
 
 interface ReceiveAllOrderDialogProps {
   order: Order;
@@ -26,6 +27,7 @@ const ReceiveAllOrderDialog = ({ order, children }: ReceiveAllOrderDialogProps) 
   const { markAllItemsAsReceived } = useOrder();
   const { addStock } = useInventory();
   const { toast } = useToast();
+  const { products } = useProducts();
 
   const unrecevedItems = order.items.filter(item => !item.received);
 
@@ -33,19 +35,29 @@ const ReceiveAllOrderDialog = ({ order, children }: ReceiveAllOrderDialogProps) 
     // Marquer tous les articles comme réceptionnés dans la commande
     markAllItemsAsReceived(order.id);
     
-    // Ajouter tous les articles non reçus au stock d'inventaire
+    // Ajouter tous les articles non reçus au stock d'inventaire avec conversion
     unrecevedItems.forEach(item => {
+      const product = products.find(p => p.id === item.productId);
+      const coefficient = product?.packagingCoefficient || 1;
+      const convertedQuantity = item.quantity * coefficient;
+      
       addStock(
         item.productId,
-        item.quantity,
+        convertedQuantity,
         `Réception commande #${order.id.slice(-5)}`,
         order.id
       );
     });
 
+    const totalStockAdded = unrecevedItems.reduce((total, item) => {
+      const product = products.find(p => p.id === item.productId);
+      const coefficient = product?.packagingCoefficient || 1;
+      return total + (item.quantity * coefficient);
+    }, 0);
+
     toast({
       title: "Commande réceptionnée",
-      description: `${unrecevedItems.length} produit(s) ajouté(s) au stock`,
+      description: `${totalStockAdded} unité(s) ajoutée(s) au stock`,
     });
 
     setOpen(false);

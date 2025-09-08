@@ -3,7 +3,7 @@ import { Product, ProductCategory } from '@/types';
 import { useToast } from '@/components/ui/use-toast';
 import { useAuth } from '@/context/AuthContext';
 
-export interface LocalProduct extends Omit<Product, 'supplierId' | 'supplierName' | 'ozegoId' | 'supplierDesignation' | 'negotiatedPrice' | 'grouping' | 'caliber' | 'brand' | 'isEgalim' | 'otherLabels' | 'packagingCoefficient' | 'technicalSheetUrl' | 'imageUrl'> {
+export interface LocalProduct extends Omit<Product, 'supplierId' | 'supplierName' | 'ozegoId' | 'supplierDesignation' | 'negotiatedPrice' | 'grouping' | 'caliber' | 'brand' | 'isEgalim' | 'otherLabels' | 'packagingCoefficient' | 'negotiationUnit' | 'technicalSheetUrl' | 'imageUrl'> {
   customSupplierId?: string;
   customSupplierName: string;
   clientId: string;

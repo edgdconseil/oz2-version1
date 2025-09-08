@@ -81,7 +81,11 @@ const ReceiveOrderDialog = ({ orderItem, orderId, order, children }: ReceiveOrde
       litigeSouhait: litigeStatus !== 'none' ? litigeSouhait : undefined
     });
     
-    // Ajouter au stock d'inventaire la quantité réellement reçue
+    // Ajouter au stock d'inventaire la quantité réellement reçue avec conversion
+    const product = getProductById(orderItem.productId);
+    const coefficient = product?.packagingCoefficient || 1;
+    const convertedQuantity = receivedQuantity * coefficient;
+    
     // Utiliser le prix appliqué seulement s'il est inférieur au prix commandé, sinon utiliser le prix commandé
     const inventoryPrice = receivedPrice < orderItem.priceHT ? receivedPrice : orderItem.priceHT;
     const priceComment = receivedPrice < orderItem.priceHT 
@@ -90,27 +94,28 @@ const ReceiveOrderDialog = ({ orderItem, orderId, order, children }: ReceiveOrde
     
     addStock(
       orderItem.productId,
-      receivedQuantity,
+      convertedQuantity,
       priceComment,
       orderId
     );
 
     // Messages adaptés selon le statut
+    const displayUnit = product?.negotiationUnit || product?.packagingUnit || 'unité';
     if (litigeStatus !== 'none') {
       toast({
         title: "Produit réceptionné avec litige",
-        description: `${orderItem.productName}: ${receivedQuantity} reçu(s) - Litige en cours`,
+        description: `${orderItem.productName}: ${convertedQuantity} ${displayUnit} ajouté(s) au stock - Litige en cours`,
         variant: "destructive"
       });
     } else if (receivedQuantity !== orderItem.quantity || receivedPrice !== orderItem.priceHT) {
       toast({
         title: "Produit réceptionné",
-        description: `${orderItem.productName}: ${receivedQuantity} reçu(s) (${orderItem.quantity} commandé(s))`,
+        description: `${orderItem.productName}: ${convertedQuantity} ${displayUnit} ajouté(s) au stock (${orderItem.quantity} ${orderItem.packagingUnit} commandé(s))`,
       });
     } else {
       toast({
         title: "Produit réceptionné",
-        description: `${orderItem.productName}: ${receivedQuantity} unité(s) ajoutée(s) au stock`,
+        description: `${orderItem.productName}: ${convertedQuantity} ${displayUnit} ajouté(s) au stock`,
       });
     }
 

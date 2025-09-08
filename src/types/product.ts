@@ -21,6 +21,7 @@ export interface Product {
   vatRate: number; // TVA
   packagingUnit: string; // Unité de COM
   packagingCoefficient?: number; // Coef unité de COM
+  negotiationUnit?: string; // Unité de négociation (U. Négo)
   technicalSheetUrl?: string; // Fiche technique
   imageUrl?: string; // Url photo
   ozegoId: string; // ID Ozego

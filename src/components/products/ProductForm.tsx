@@ -118,6 +118,7 @@ const ProductForm = ({ onSubmit, isOpen, onOpenChange }: ProductFormProps) => {
                 <TextField form={form} name="packagingUnit" label="Unité de COM" placeholder="ex: kg, pièce, lot de 10..." />
                 <PriceField form={form} name="packagingCoefficient" label="Coef unité de COM" />
               </div>
+              <TextField form={form} name="negotiationUnit" label="U. Négo" placeholder="ex: sachet, unité..." />
             </div>
 
             {/* Documents et médias */}

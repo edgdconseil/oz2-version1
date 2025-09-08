@@ -19,6 +19,8 @@ export const products: Product[] = [
     reference: 'FB-F001',
     vatRate: 5.5,
     packagingUnit: 'kg',
+    packagingCoefficient: 1,
+    negotiationUnit: 'kg',
     imageUrl: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/pommes-bio.pdf',
     ozegoId: 'OZG-F-0001'
@@ -39,6 +41,8 @@ export const products: Product[] = [
     reference: 'FB-F002',
     vatRate: 5.5,
     packagingUnit: 'kg',
+    packagingCoefficient: 1,
+    negotiationUnit: 'kg',
     imageUrl: 'https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/carottes.pdf',
     ozegoId: 'OZG-F-0002'
@@ -59,6 +63,8 @@ export const products: Product[] = [
     reference: 'FB-F003',
     vatRate: 5.5,
     packagingUnit: 'pièce',
+    packagingCoefficient: 1,
+    negotiationUnit: 'pièce',
     imageUrl: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/poulet-fermier.pdf',
     ozegoId: 'OZG-F-0003'
@@ -79,6 +85,8 @@ export const products: Product[] = [
     reference: 'FB-F004',
     vatRate: 5.5,
     packagingUnit: 'pack de 4',
+    packagingCoefficient: 4,
+    negotiationUnit: 'pot',
     imageUrl: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/yaourt-nature.pdf',
     ozegoId: 'OZG-F-0004'
@@ -100,6 +108,8 @@ export const products: Product[] = [
     reference: 'EP-NF001',
     vatRate: 20,
     packagingUnit: 'paquet de 100',
+    packagingCoefficient: 100,
+    negotiationUnit: 'serviette',
     imageUrl: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/serviettes.pdf',
     ozegoId: 'OZG-NF-0001'
@@ -120,6 +130,8 @@ export const products: Product[] = [
     reference: 'EP-NF002',
     vatRate: 20,
     packagingUnit: 'flacon de 500ml',
+    packagingCoefficient: 1,
+    negotiationUnit: 'flacon',
     imageUrl: 'https://images.unsplash.com/photo-1584365685547-9a5fb6f3a70c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/gel-hydroalcoolique.pdf',
     ozegoId: 'OZG-NF-0002'
@@ -140,6 +152,8 @@ export const products: Product[] = [
     reference: 'EP-NF003',
     vatRate: 20,
     packagingUnit: 'lot de 10',
+    packagingCoefficient: 10,
+    negotiationUnit: 'gant',
     imageUrl: 'https://images.unsplash.com/photo-1583333001983-9d5d48d5168f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/gants-toilette.pdf',
     ozegoId: 'OZG-NF-0003'
@@ -161,6 +175,8 @@ export const products: Product[] = [
     reference: 'FB-F005',
     vatRate: 5.5,
     packagingUnit: 'barquette',
+    packagingCoefficient: 1,
+    negotiationUnit: 'barquette',
     imageUrl: 'https://images.unsplash.com/photo-1546233826-97302d778b1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/tomates-cerises.pdf',
     ozegoId: 'OZG-F-0005'
@@ -181,6 +197,8 @@ export const products: Product[] = [
     reference: 'FB-F006',
     vatRate: 5.5,
     packagingUnit: 'pièce',
+    packagingCoefficient: 1,
+    negotiationUnit: 'pièce',
     imageUrl: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/salade.pdf',
     ozegoId: 'OZG-F-0006'
@@ -201,6 +219,8 @@ export const products: Product[] = [
     reference: 'EP-NF004',
     vatRate: 20,
     packagingUnit: 'pack de 12',
+    packagingCoefficient: 12,
+    negotiationUnit: 'rouleau',
     imageUrl: 'https://images.unsplash.com/photo-1583251633269-6d119dafa715?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/papier-toilette.pdf',
     ozegoId: 'OZG-NF-0004'
@@ -221,6 +241,8 @@ export const products: Product[] = [
     reference: 'FB-F007',
     vatRate: 5.5,
     packagingUnit: 'pièce',
+    packagingCoefficient: 1,
+    negotiationUnit: 'pièce',
     imageUrl: 'https://images.unsplash.com/photo-1598373182133-52452f7691ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/pain-complet.pdf',
     ozegoId: 'OZG-F-0007'
@@ -241,8 +263,33 @@ export const products: Product[] = [
     reference: 'EP-NF005',
     vatRate: 20,
     packagingUnit: 'pain de 100g',
+    packagingCoefficient: 1,
+    negotiationUnit: 'pain',
     imageUrl: 'https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     technicalSheetUrl: 'https://example.com/fiches/savon.pdf',
     ozegoId: 'OZG-NF-0005'
+  },
+  // Exemple d'un produit avec coefficient élevé
+  {
+    id: '13',
+    name: 'Sel en sachets',
+    supplierDesignation: 'Paquet de sel fin - 2000 sachets de 1g chacun',
+    priceHT: 15.0,
+    weight: 2,
+    origin: 'France',
+    isOrganic: false,
+    isEgalim: false,
+    supplierId: '1',
+    supplierName: 'Ozego Distribution',
+    category: 'food',
+    available: true,
+    reference: 'OZ-F013',
+    vatRate: 5.5,
+    packagingUnit: 'paquet',
+    packagingCoefficient: 2000,
+    negotiationUnit: 'sachet',
+    imageUrl: 'https://images.unsplash.com/photo-1584679782644-c50b1fdc43eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    technicalSheetUrl: 'https://example.com/fiches/sel-sachets.pdf',
+    ozegoId: 'OZG-F-0013'
   }
 ];

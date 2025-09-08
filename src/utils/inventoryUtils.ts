@@ -7,7 +7,7 @@ export const createInventoryItem = (product: Product): InventoryItem => ({
   productReference: product.reference,
   currentStock: 0,
   alertThreshold: 5,
-  unit: product.packagingUnit,
+  unit: product.negotiationUnit || product.packagingUnit,
   lastUpdated: new Date().toISOString(),
   averageConsumption: 0,
   category: product.category,
