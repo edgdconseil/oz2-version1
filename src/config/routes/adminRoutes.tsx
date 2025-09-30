@@ -12,6 +12,7 @@ import ShippingCosts from "@/pages/admin/ShippingCosts";
 import AdminDepots from "@/pages/admin/Depots";
 import ClientTracking from "@/pages/admin/ClientTracking";
 import OrderAnalytics from "@/pages/admin/OrderAnalytics";
+import Categories from "@/pages/admin/Categories";
 
 export const adminRoutes = (
   <>
@@ -75,6 +76,14 @@ export const adminRoutes = (
       <ProtectedRoute requiredRole={['admin']}>
         <Layout>
           <OrderAnalytics />
+        </Layout>
+      </ProtectedRoute>
+    } />
+    
+    <Route path="/admin/categories" element={
+      <ProtectedRoute requiredRole={['admin']}>
+        <Layout>
+          <Categories />
         </Layout>
       </ProtectedRoute>
     } />

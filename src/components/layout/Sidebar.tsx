@@ -76,6 +76,7 @@ const Sidebar = () => {
           { icon: Clipboard, label: 'Commandes', path: '/admin/orders' },
           { icon: Truck, label: 'Frais de livraison', path: '/admin/shipping-costs' },
           { icon: Warehouse, label: 'Dépôts', path: '/admin/depots' },
+          { icon: FileCog, label: 'Catégories', path: '/admin/categories' },
           { icon: BarChart3, label: 'Suivi clients', path: '/admin/client-tracking' },
           { icon: BarChart3, label: 'Analyse commandes', path: '/admin/order-analytics' },
         ];
