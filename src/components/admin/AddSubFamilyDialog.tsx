@@ -31,6 +31,7 @@ export const AddSubFamilyDialog = ({
   onAdd,
   families,
 }: AddSubFamilyDialogProps) => {
+  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [category, setCategory] = useState<CategoryType>('Alimentaire');
   const [familyId, setFamilyId] = useState('');
@@ -38,6 +39,15 @@ export const AddSubFamilyDialog = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!id.trim()) {
+      toast({
+        title: 'Erreur',
+        description: "L'ID de la sous-famille est requis",
+        variant: 'destructive',
+      });
+      return;
+    }
 
     if (!name.trim()) {
       toast({
@@ -58,7 +68,7 @@ export const AddSubFamilyDialog = ({
     }
 
     const newSubFamily: SubFamily = {
-      id: `SUBFAM-${Date.now()}`,
+      id: id.trim(),
       name: name.trim(),
       category,
       familyId,
@@ -71,6 +81,7 @@ export const AddSubFamilyDialog = ({
     });
 
     // Reset form
+    setId('');
     setName('');
     setCategory('Alimentaire');
     setFamilyId('');
@@ -85,6 +96,16 @@ export const AddSubFamilyDialog = ({
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="subfamily-id">ID de la sous-famille *</Label>
+            <Input
+              id="subfamily-id"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+              placeholder="Ex: SUBFAM-001"
+            />
+          </div>
+
           <div className="space-y-2">
             <Label htmlFor="subfamily-name">Nom de la sous-famille *</Label>
             <Input

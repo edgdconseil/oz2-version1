@@ -29,12 +29,22 @@ export const AddFamilyDialog = ({
   onOpenChange,
   onAdd,
 }: AddFamilyDialogProps) => {
+  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [category, setCategory] = useState<CategoryType>('Alimentaire');
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!id.trim()) {
+      toast({
+        title: 'Erreur',
+        description: "L'ID de la famille est requis",
+        variant: 'destructive',
+      });
+      return;
+    }
 
     if (!name.trim()) {
       toast({
@@ -46,7 +56,7 @@ export const AddFamilyDialog = ({
     }
 
     const newFamily: Family = {
-      id: `FAM-${Date.now()}`,
+      id: id.trim(),
       name: name.trim(),
       category,
     };
@@ -58,6 +68,7 @@ export const AddFamilyDialog = ({
     });
 
     // Reset form
+    setId('');
     setName('');
     setCategory('Alimentaire');
     onOpenChange(false);
@@ -71,6 +82,16 @@ export const AddFamilyDialog = ({
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="family-id">ID de la famille *</Label>
+            <Input
+              id="family-id"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+              placeholder="Ex: FAM-001"
+            />
+          </div>
+
           <div className="space-y-2">
             <Label htmlFor="family-name">Nom de la famille *</Label>
             <Input
