@@ -59,24 +59,18 @@ const DashboardSummary: React.FC<DashboardSummaryProps> = ({ userRole }) => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {/* Analyse des commandes */}
+      {/* Résumé des commandes */}
       <Card className="lg:col-span-2">
-        <CardHeader className="flex flex-row items-center justify-between">
+        <CardHeader>
           <div>
             <CardTitle className="flex items-center gap-2">
               <Euro className="h-5 w-5" />
-              {isAdmin ? 'Analyse globale des commandes' : 'Mon analyse de commandes'}
+              {isAdmin ? 'Commandes globales' : 'Mes commandes'}
             </CardTitle>
             <p className="text-sm text-muted-foreground mt-1">
               {isAdmin ? 'Évolution des commandes tous clients confondus' : 'Évolution de vos commandes cette semaine'}
             </p>
           </div>
-          <Button variant="outline" size="sm" asChild>
-            <Link to={isAdmin ? "/admin/order-analytics" : "/client/order-analytics"}>
-              <TrendingUp className="h-4 w-4 mr-2" />
-              Voir plus
-            </Link>
-          </Button>
         </CardHeader>
         <CardContent>
           <div className="h-[200px]">
