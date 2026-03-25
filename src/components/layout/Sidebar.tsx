@@ -34,7 +34,6 @@ const Sidebar = () => {
     switch (user.role) {
       case 'client':
         return [
-          { icon: Home, label: 'Tableau de bord', path: '/' },
           { icon: Newspaper, label: 'Actualités', path: '/news' },
           { icon: ShoppingBag, label: 'Catalogue', path: '/catalog' },
           { icon: MapPin, label: 'Produits locaux', path: '/local-products' },
@@ -47,7 +46,6 @@ const Sidebar = () => {
         ];
       case 'guest':
         return [
-          { icon: Home, label: 'Tableau de bord', path: '/' },
           { icon: Newspaper, label: 'Actualités', path: '/news' },
           { icon: ShoppingBag, label: 'Catalogue', path: '/catalog' },
           { icon: MapPin, label: 'Produits locaux', path: '/local-products' },
@@ -60,13 +58,11 @@ const Sidebar = () => {
         ];
       case 'supplier':
         return [
-          { icon: Home, label: 'Tableau de bord', path: '/' },
           { icon: Newspaper, label: 'Actualités', path: '/news' },
           { icon: Package, label: 'Mes Produits', path: '/products' },
         ];
       case 'admin':
         return [
-          { icon: Home, label: 'Tableau de bord', path: '/' },
           { icon: Newspaper, label: 'Actualités', path: '/news' },
           { icon: Users, label: 'Utilisateurs', path: '/admin/users' },
           { icon: ShoppingBag, label: 'Produits', path: '/admin/products' },
