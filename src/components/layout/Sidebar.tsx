@@ -44,7 +44,6 @@ const Sidebar = () => {
           { icon: Archive, label: 'Inventaire', path: '/inventory' },
           { icon: Building2, label: 'Mes fournisseurs', path: '/suppliers' },
           { icon: GraduationCap, label: 'Catalogue expert', path: '/trainings' },
-          { icon: BarChart3, label: 'Analyse commandes', path: '/client/order-analytics' },
         ];
       case 'guest':
         return [
@@ -58,7 +57,6 @@ const Sidebar = () => {
           { icon: Archive, label: 'Inventaire', path: '/inventory' },
           { icon: Building2, label: 'Mes fournisseurs', path: '/suppliers' },
           { icon: GraduationCap, label: 'Catalogue expert', path: '/trainings' },
-          { icon: BarChart3, label: 'Analyse commandes', path: '/client/order-analytics' },
         ];
       case 'supplier':
         return [
