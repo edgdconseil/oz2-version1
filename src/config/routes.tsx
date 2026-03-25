@@ -1,11 +1,9 @@
 
 import { Routes, Route, Navigate } from "react-router-dom";
-import Layout from "@/components/layout/Layout";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 
 // Import all page components
 import Login from "@/pages/Login";
-import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 
 // Import route configurations
@@ -20,9 +18,7 @@ const AppRoutes = () => (
     
     <Route path="/" element={
       <ProtectedRoute>
-        <Layout>
-          <Index />
-        </Layout>
+        <Navigate to="/news" replace />
       </ProtectedRoute>
     } />
     

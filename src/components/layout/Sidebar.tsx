@@ -63,7 +63,6 @@ const Sidebar = () => {
         ];
       case 'admin':
         return [
-          { icon: Home, label: 'Tableau de bord', path: '/' },
           { icon: Newspaper, label: 'Actualités', path: '/news' },
           { icon: Users, label: 'Utilisateurs', path: '/admin/users' },
           { icon: ShoppingBag, label: 'Produits', path: '/admin/products' },
