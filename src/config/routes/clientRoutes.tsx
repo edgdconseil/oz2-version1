@@ -13,7 +13,6 @@ import RecipeDetail from "@/pages/client/RecipeDetail";
 import RecipeCreate from "@/pages/client/RecipeCreate";
 import RecipeEdit from "@/pages/client/RecipeEdit";
 import Trainings from "@/pages/client/Trainings";
-import OrderAnalytics from "@/pages/client/OrderAnalytics";
 
 import SupplierReferences from "@/pages/client/SupplierReferences";
 import { RecurringOrders } from "@/pages/client/RecurringOrders";
