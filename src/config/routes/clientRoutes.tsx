@@ -91,14 +91,6 @@ export const clientRoutes = (
       </ProtectedRoute>
     } />
     
-    <Route path="/client/order-analytics" element={
-      <ProtectedRoute requiredRole={['client', 'guest']}>
-        <Layout>
-          <OrderAnalytics />
-        </Layout>
-      </ProtectedRoute>
-    } />
-    
     
     <Route path="/suppliers" element={
       <ProtectedRoute requiredRole={['client', 'guest']}>
