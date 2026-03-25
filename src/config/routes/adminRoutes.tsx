@@ -71,13 +71,6 @@ export const adminRoutes = (
       </ProtectedRoute>
     } />
     
-    <Route path="/admin/order-analytics" element={
-      <ProtectedRoute requiredRole={['admin']}>
-        <Layout>
-          <OrderAnalytics />
-        </Layout>
-      </ProtectedRoute>
-    } />
     
     <Route path="/admin/categories" element={
       <ProtectedRoute requiredRole={['admin']}>
