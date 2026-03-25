@@ -58,7 +58,6 @@ const Sidebar = () => {
         ];
       case 'supplier':
         return [
-          { icon: Home, label: 'Tableau de bord', path: '/' },
           { icon: Newspaper, label: 'Actualités', path: '/news' },
           { icon: Package, label: 'Mes Produits', path: '/products' },
         ];
